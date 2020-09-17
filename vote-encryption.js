@@ -24,7 +24,8 @@ encKey.importKey(key.public, 'pkcs8-public-pem')
 // Example of the vote calculation code will be demonstrated in the vote-decryption script.
 
 const voteData = {
-    'vote': Math.floor(Math.random() * 2 + 1) // Generates a value of either 1 or 2 (for emulating voter choice)
+    'vote': Math.floor(Math.random() * 2 + 1), // Generates a value of either 1 or 2 (for emulating voter choice)
+    'npm': '2006000000'
 }
 
 const encrypted_data = encKey.encrypt(JSON.stringify(voteData), 'base64') // Encrypts vote data to ensure anonymity
