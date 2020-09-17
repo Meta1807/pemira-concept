@@ -16,8 +16,11 @@ Untuk itu, saya memanfaatkan RSA key-pair dalam konsep voting system yang saya b
 Dengan memanfaatkan RSA key-pair, dapat dibuat sebuah voting system dimana vote seseorang tidak dapat ditentukan tanpa memiliki private key, dan tidak bisa di _tamper_ secara langsung.
 
 ## What does this code do exactly?
-Takes in vote from user (emulated by a random number function for this code) -> Vote data gets sent from client to server -> Server encrypts the incoming JSON object -> Generates a random UUID/nanoid and stores it into database, this ensures that without private key no one will be able to see votes.
+**vote-encryption.js:**
+Takes in vote from user (emulated by a random number function for this code) -> Vote data gets sent from client to server -> Server encrypts the incoming JSON object -> Generates a random UUID/nanoid and stores it into an independent table in database, this ensures that without private key no one will be able to see votes.
 
+**vote-decryption.js:**
 For decryption and tallying, the code only needs to get all vote data from the database, decrypt using the private key (will be kept secret), and tallies up the votes.
 
+**How to ensure that a user only votes once?**
 To ensure that a user can only vote once, the UI SSO system can be used to get data of user. The server will then store a "Vote State" value that will be set to True after a user has voted. This data will be kept on a separate table from the votes to ensure that the identity of a voter cannot be deduced.
