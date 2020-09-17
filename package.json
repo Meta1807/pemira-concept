@@ -1,0 +1,18 @@
+{
+  "name": "pemira-concept",
+  "version": "1.0.0",
+  "description": "",
+  "main": "encryption-key.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lowdb": "^1.0.0",
+    "math": "0.0.3",
+    "nanoid": "^3.1.12",
+    "node-rsa": "^1.1.1"
+  }
+}
