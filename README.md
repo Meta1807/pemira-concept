@@ -13,7 +13,7 @@ Untuk itu, saya memanfaatkan RSA key-pair dalam konsep voting system yang saya b
 
 **Tanpa private key, data yang telah di enkripsi oleh public key tidak akan dapat didekripsi (membutuhkan waktu ribuan tahun).**
 
-Dengan memanfaatkan RSA key-pair, dapat dibuat sebuah voting system dimana vote seseorang tidak dapat ditentukan tanpa memiliki private key, dan tidak bisa di _tamper_ secara langsung.
+Dengan memanfaatkan RSA key-pair, dapat dibuat sebuah voting system dimana vote seseorang tidak dapat ditentukan tanpa memiliki private key apabila database bocor, dan tidak bisa di _tamper_ secara langsung.
 
 ## What does this code do exactly?
 **vote-encryption.js:**
